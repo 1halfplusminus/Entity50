@@ -4,9 +4,7 @@ using Unity.Entities;
 using UnityEngine;
 using Unity.Scenes;
 using Unity.Collections;
-#if UNITY_EDITOR
-    using UnityEditor;
-#endif
+
     // Authoring component, a SceneAsset can only be used in the Editor
     public class SceneLoaderAuthoring : MonoBehaviour, IConvertGameObjectToEntity
     {

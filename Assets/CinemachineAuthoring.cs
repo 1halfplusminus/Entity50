@@ -12,6 +12,8 @@ public class CinemachineAuthoring : MonoBehaviour, IConvertGameObjectToEntity
         conversionSystem.DeclareDependency(gameObject,virtualCamera.m_Follow);
         conversionSystem.DeclareDependency(gameObject,virtualCamera.m_Follow);
         dstManager.AddComponentObject(entity,virtualCamera);
-        dstManager.AddComponentObject(entity,virtualCamera.m_Follow);
+        if(virtualCamera.m_Follow != null){
+            dstManager.AddComponentObject(entity,virtualCamera.m_Follow);
+        }
     }
 }

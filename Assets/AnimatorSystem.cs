@@ -6,6 +6,8 @@ using Unity.Transforms;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Animations;
+using Unity.Collections;
+
 [UpdateBefore(typeof(TransformSystemGroup))]
 public partial class AnimatorSystem : SystemBase
 {
@@ -17,8 +19,6 @@ public partial class AnimatorSystem : SystemBase
     }
     protected override void OnUpdate()
     {
-        var cb = entityCommandBufferSystem.CreateCommandBuffer();
-        var cbp = cb.AsParallelWriter();
         Entities
         .WithNone<NotInitialized>()
         .ForEach((
@@ -92,13 +92,15 @@ public partial class AnimatorSystem : SystemBase
         Entities
         .WithAll<NotInitialized>().ForEach((
             Entity e,
-            AnimatorRef animatorRef,
-            ref PlayableStream playableStream
+            ref PlayableStream playableStream,
+            in AnimatorRef animatorRef
             )=>{
             // var bones = allBones[rendererRef.Value];
             var animator = EntityManager.GetComponentObject<Animator>(animatorRef.Value);
             var instance = animator.gameObject.activeInHierarchy ? animator :  Object.Instantiate(animator);
             var renderer = instance.GetComponentInChildren<SkinnedMeshRenderer>();
+            var destroyWithEntity = instance.gameObject.AddComponent<DestroyWithEntity>();
+            destroyWithEntity.entity = e;
             for(int i = 0; i < GetBuffer<Bone>(e).Length; i++){
                 EntityManager.AddComponentObject(GetBuffer<Bone>(e)[i].Entity,renderer.bones[i]);
             }
@@ -119,18 +121,8 @@ public partial class AnimatorSystem : SystemBase
             EntityManager.RemoveComponent<NotInitialized>(e);
             instance.OpenAnimationStream(ref playableStream.Stream);
             Object.Destroy(renderer.gameObject);
-            // renderer.enabled = false;
-            // Object.Destroy(renderer.gameObject);
-            // Object.Destroy(renderer.gameObject);
         }).WithStructuralChanges().Run();
-        // Entities.ForEach((Animator animator, ref PlayableStream stream)=>{
-        //     animator.Update(delta);
-        //     animator.OpenAnimationStream(ref stream.Stream);
-        //     animator.ResolveAllSceneHandles();
-        //     animator.ResolveAllStreamHandles();
-        //     animator.StartPlayback();
-        //     animator.playableGraph.Play();
-        // }).WithoutBurst().Run();
+     
         entityCommandBufferSystem.AddJobHandleForProducer(Dependency);
     }
 }

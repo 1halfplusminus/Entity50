@@ -2,15 +2,11 @@
 
 using UnityEngine;
 using Unity.Entities;
-using UnityEngine.Playables;
 using UnityEngine.Animations;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine.Animations.Rigging;
-using Unity.Collections;
-using Unity.Entities.Hybrid;
-using Unity.Rendering;
-using System.Collections.Generic;
+
 
 public struct Bone : IBufferElementData
 {
@@ -18,8 +14,6 @@ public struct Bone : IBufferElementData
     public int Index;
 
     public float4x4 BindPose;
-
-    public Vector3Property Position;
 
     public ReadOnlyTransformHandle TransformHandle;
 
@@ -34,11 +28,6 @@ public struct AnimatedBlendShape : IBufferElementData
 {
     public PropertyStreamHandle PropertyStream;
     public int Index;
-}
-public struct PlayableAnimator : IComponentData
-{
-    public PlayableGraph Graph;
-    public AnimationScriptPlayable AnimationScript;
 }
 
 public struct PlayableStream : IComponentData
@@ -65,7 +54,6 @@ public partial class CloneSystem : SystemBase
             {
                 clone.CurrentNumber += 1;
                 var cloneEntity = cbp.Instantiate(entityInQueryIndex,clone.Prefab);
-                // cb.RemoveComponent<Clone>(cloneEntity);
                 var position = random.NextFloat3(-2, 2);
                 cbp.AddComponent(entityInQueryIndex,cloneEntity, new Translation { Value = position });
 
@@ -79,11 +67,19 @@ public struct NotInitialized : IComponentData
 {
     
 }
+public class DestroyWithEntity : MonoBehaviour{
+    public Entity entity;
 
+    void Update(){
+        if(!World.DefaultGameObjectInjectionWorld.EntityManager.Exists(entity)){
+            Destroy(gameObject);
+        }
+    }
+}
 public struct AnimatorRef: IComponentData{
     public Entity Value;
 }
-[WorldSystemFilter(WorldSystemFilterFlags.HybridGameObjectConversion)]
+// [WorldSystemFilter(WorldSystemFilterFlags.HybridGameObjectConversion)]
 public class AnimatorAuthoring : MonoBehaviour, IConvertGameObjectToEntity
 {
     public Animator Animator;
@@ -93,6 +89,7 @@ public class AnimatorAuthoring : MonoBehaviour, IConvertGameObjectToEntity
    
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
     {
+        
         // Debug.Log("Here");
         // var conversionSettings = GameObjectConversionSettings
         // .FromWorld(dstManager.World, conversionSystem.BlobAssetStore);
@@ -102,15 +99,19 @@ public class AnimatorAuthoring : MonoBehaviour, IConvertGameObjectToEntity
         // {
             // var dstManager  = conversionSettings.DestinationWorld.EntityManager;
             // var conversionSystem = world.GetOrCreateSystem<GameObjectConversionSystem>();
+            // conversionSystem.AddTypeToCompanionWhiteList(typeof(SkinnedMeshRenderer));
+            // conversionSystem.AddTypeToCompanionWhiteList(typeof(Animator));
             dstManager.AddComponentObject(entity, Animator);
+        
+            // dstManager.AddComponentObject(entity,GetComponent<BoxCollider>());
             // dstManager.AddComponentObject(entity, Renderer);
          
             conversionSystem.DeclareDependency(gameObject, Renderer);
-
+            
             var playableStream = new PlayableStream();
             var rendererEntity = conversionSystem.GetPrimaryEntity(Renderer);
             dstManager.AddComponentData(rendererEntity,new AnimatorRef{Value = entity});
-            
+            // dstManager.AddComponentObject(rendererEntity, Renderer);
             dstManager.AddComponentData(rendererEntity, playableStream);
             var skeleton = Renderer.bones;
             var bones = dstManager.AddBuffer<Bone>(rendererEntity);
@@ -177,8 +178,10 @@ public class AnimatorAuthoring : MonoBehaviour, IConvertGameObjectToEntity
 
 }
 [UpdateInGroup(typeof(GameObjectAfterConversionGroup))]
+
 public class AnimatorConversionSystem : GameObjectConversionSystem
 {
+
     protected override void OnUpdate()
     {
         Entities.ForEach((AnimatorAuthoring animatorAuthoring) =>{

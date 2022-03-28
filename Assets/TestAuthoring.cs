@@ -4,10 +4,8 @@ using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using Doohickey = UnityEngine.Animator;
-public struct Animation: IComponentData{
-    public Animator Animator;
-}
+
+
 // public class TestAuthoring : MonoBehaviour, IConvertGameObjectToEntity
 // {
 //     public Entity Parent;
