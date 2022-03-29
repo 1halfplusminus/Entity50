@@ -6,16 +6,19 @@ using UnityEngine.Animations;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine.Animations.Rigging;
-
+using Unity.Collections;
 
 public struct Bone : IBufferElementData
 {
+
+    public FixedString32Bytes Name;
     public Entity Entity;
-    public int Index;
 
     public float4x4 BindPose;
 
     public ReadOnlyTransformHandle TransformHandle;
+
+    public int ParentIndex;
 
 
 }
@@ -29,9 +32,10 @@ public struct AnimatedBlendShape : IBufferElementData
     public PropertyStreamHandle PropertyStream;
     public int Index;
 }
-
+[ChunkSerializable]
 public struct PlayableStream : IComponentData
 {
+
     public AnimationStream Stream;
 }
 public partial class CloneSystem : SystemBase
@@ -118,23 +122,34 @@ public class AnimatorAuthoring : MonoBehaviour, IConvertGameObjectToEntity
             bones.ResizeUninitialized(skeleton.Length);
             conversionSystem.DeclareLinkedEntityGroup(gameObject);
             conversionSystem.DeclareLinkedEntityGroup(Renderer.rootBone.parent.gameObject);
+            var gameObjectByIndex = new NativeHashMap<int,int>(skeleton.Length,Allocator.Temp);
             for (int i = 0; i < skeleton.Length; i++)
             {
+               
                 var bone = skeleton[i];
+                gameObjectByIndex.Add(bone.gameObject.GetInstanceID(),i);
                 var boneEntity = conversionSystem.GetPrimaryEntity(bone);
                 bones = dstManager.GetBuffer<Bone>(rendererEntity);
                 var boneComponent = new Bone
                 {
+                    Name = bone.name,
                     Entity = boneEntity,
                     BindPose = Renderer.sharedMesh.bindposes[i],
                     TransformHandle = ReadOnlyTransformHandle.Bind(Animator, bone),
                 };
+                if(bone.transform.parent != null && gameObjectByIndex.ContainsKey(bone.transform.parent.gameObject.GetInstanceID())){
+                    boneComponent.ParentIndex = gameObjectByIndex[bone.transform.parent.gameObject.GetInstanceID()];
+                } else{
+                    boneComponent.ParentIndex = 0;
+                }
                 bones[i] = boneComponent;
                 dstManager.SetName(boneEntity, bone.name);
                 dstManager.AddComponent<CopyInitialTransformFromGameObject>(boneEntity);
                 dstManager.AddComponent<CopyTransformFromGameObject>(boneEntity);
                 dstManager.AddComponentData(boneEntity, new BoneTransform { Index = i, Stream = rendererEntity });
-                // dstManager.AddComponentObject(boneEntity, bone);
+                var boneAuthoring = bone.gameObject.AddComponent<BoneAuthoring>();
+                boneAuthoring.Transform = bone;
+                dstManager.AddComponentObject(boneEntity, boneAuthoring);
 
             }
            
@@ -186,10 +201,10 @@ public class AnimatorConversionSystem : GameObjectConversionSystem
     {
         Entities.ForEach((AnimatorAuthoring animatorAuthoring) =>{
             var entity = GetPrimaryEntity(animatorAuthoring);
-            if(animatorAuthoring.gameObject.activeInHierarchy){
-                var instance = Object.Instantiate(animatorAuthoring.Animator);
-                DstEntityManager.AddComponentObject(entity,instance);
-            }
+            // if(animatorAuthoring.gameObject.activeInHierarchy){
+            //     var instance = Object.Instantiate(animatorAuthoring.Animator);
+            //     DstEntityManager.AddComponentObject(entity,instance);
+            // }
         });
     }
 }

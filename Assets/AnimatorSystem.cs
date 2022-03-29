@@ -7,15 +7,20 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Animations;
 using Unity.Collections;
+using Unity.NetCode;
+using Unity.Rendering;
 
 [UpdateBefore(typeof(TransformSystemGroup))]
+[UpdateInGroup(typeof(ClientSimulationSystemGroup))]
 public partial class AnimatorSystem : SystemBase
 {
     EntityCommandBufferSystem entityCommandBufferSystem;
+    EntityQuery bonesQuery;
     protected override void OnCreate()
     {
         base.OnCreate();
         entityCommandBufferSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
+        bonesQuery = GetEntityQuery(ComponentType.ReadOnly<BoneTransform>());
     }
     protected override void OnUpdate()
     {
@@ -89,38 +94,54 @@ public partial class AnimatorSystem : SystemBase
 
         }).ScheduleParallel();
         var delta = Time.DeltaTime;
+
         Entities
         .WithAll<NotInitialized>().ForEach((
             Entity e,
             ref PlayableStream playableStream,
             in AnimatorRef animatorRef
             )=>{
+
             // var bones = allBones[rendererRef.Value];
             var animator = EntityManager.GetComponentObject<Animator>(animatorRef.Value);
             var instance = animator.gameObject.activeInHierarchy ? animator :  Object.Instantiate(animator);
-            var renderer = instance.GetComponentInChildren<SkinnedMeshRenderer>();
-            var destroyWithEntity = instance.gameObject.AddComponent<DestroyWithEntity>();
-            destroyWithEntity.entity = e;
+            // var renderer = new SkinnedMeshRenderer();
+            // renderer.sharedMesh = renderMesh.mesh;
+            // var destroyWithEntity = instance.gameObject.AddComponent<DestroyWithEntity>();
+            // destroyWithEntity.entity = e;
+        
             for(int i = 0; i < GetBuffer<Bone>(e).Length; i++){
-                EntityManager.AddComponentObject(GetBuffer<Bone>(e)[i].Entity,renderer.bones[i]);
+                var bone = new GameObject();
+                var boneLocalToWorld = EntityManager.GetComponentObject<BoneAuthoring>(GetBuffer<Bone>(e)[i].Entity);
+                // bone.transform.name = GetBuffer<Bone>(e)[i].Name.ToString();
+                // bones[i] = bone.transform;
+                // bones[i].localPosition = boneLocalToWorld.Position;
+                // bones[i].localRotation = boneLocalToWorld.Rotation;
+                if(GetBuffer<Bone>(e)[i].ParentIndex == 0){
+                   boneLocalToWorld.Transform.parent = animator.transform;
+                } else {
+                    // bones[i].parent = bones[GetBuffer<Bone>(e)[i].ParentIndex];
+                }
+
+                // EntityManager.AddComponentObject(GetBuffer<Bone>(e)[i].Entity,bones[i]);
             }
-            var animatedBlendShapes = EntityManager.AddBuffer<AnimatedBlendShape>(e);
-            animatedBlendShapes.ResizeUninitialized(renderer.sharedMesh.blendShapeCount);
-            for (int i = 0; i < renderer.sharedMesh.blendShapeCount; i++)
-            {
-                var name = renderer.sharedMesh.GetBlendShapeName(i);
-                var animatedBlendShape = new AnimatedBlendShape
-                {
-                    PropertyStream = instance.BindStreamProperty(renderer.transform, typeof(SkinnedMeshRenderer), $"blendShape.{name}"),
-                };
-                animatedBlendShapes[i] = animatedBlendShape;
-            }
+            // var animatedBlendShapes = EntityManager.AddBuffer<AnimatedBlendShape>(e);
+            // animatedBlendShapes.ResizeUninitialized(renderMesh.mesh.blendShapeCount);
+            // for (int i = 0; i < renderMesh.mesh.blendShapeCount; i++)
+            // {
+            //     var name = renderMesh.mesh.GetBlendShapeName(i);
+            //     var animatedBlendShape = new AnimatedBlendShape
+            //     {
+            //         PropertyStream = instance.BindStreamProperty(renderer.transform, typeof(SkinnedMeshRenderer), $"blendShape.{name}"),
+            //     };
+            //     animatedBlendShapes[i] = animatedBlendShape;
+            // }
             EntityManager.AddComponentObject(e,instance);
             EntityManager.AddComponentObject(e,instance.transform);
             EntityManager.AddComponent<CopyTransformToGameObject>(e);
             EntityManager.RemoveComponent<NotInitialized>(e);
             instance.OpenAnimationStream(ref playableStream.Stream);
-            Object.Destroy(renderer.gameObject);
+            // Object.Destroy(renderer.gameObject);
         }).WithStructuralChanges().Run();
      
         entityCommandBufferSystem.AddJobHandleForProducer(Dependency);
