@@ -60,9 +60,9 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.entities": {
-      "version": "file:/home/dartuchiwa/com.unity.entities@0.50.0-preview.24",
+      "version": "0.50.0-preview.24",
       "depth": 0,
-      "source": "local",
+      "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.6.4",
         "com.unity.properties": "1.7.0-preview",
@@ -79,7 +79,8 @@
         "com.unity.platforms": "0.50.0-preview.4",
         "com.unity.roslyn": "0.2.1-preview",
         "com.unity.profiling.core": "1.0.0"
-      }
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -139,6 +140,16 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.netcode": {
+      "version": "0.50.0-preview.29",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.transport": "1.0.0-pre.15",
+        "com.unity.entities": "0.50.0-preview.24"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.mono-cecil": {
@@ -369,6 +380,17 @@
       "dependencies": {
         "com.unity.sysroot": "1.0.0",
         "com.unity.sysroot.linux-x86_64": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.transport": {
+      "version": "1.0.0-pre.15",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.collections": "1.1.0",
+        "com.unity.burst": "1.6.4",
+        "com.unity.mathematics": "1.2.5"
       },
       "url": "https://packages.unity.com"
     },
