@@ -1,0 +1,1337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443ffd85a1f3f45909cb74209228ae9b, type: 3}
+  m_Name: test skeleton
+  m_EditorClassIdentifier: 
+  m_TransformChannels:
+  - ID:
+      Path: 
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: 0
+        z: 0
+      DefaultRotationValue:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      DefaultScaleValue:
+        x: 1
+        y: 1
+        z: 1
+  - ID:
+      Path: Armature2
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: 0
+        z: 0
+      DefaultRotationValue:
+        value:
+          x: -0
+          y: -0
+          z: -6.3108872e-30
+          w: 1
+      DefaultScaleValue:
+        x: 1
+        y: 1
+        z: 1
+  - ID:
+      Path: Armature2/root
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: 0
+        z: 0
+      DefaultRotationValue:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      DefaultScaleValue:
+        x: 1
+        y: 1
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine
+    Properties:
+      DefaultTranslationValue:
+        x: -0.029141225
+        y: 0.7693534
+        z: -0.03732987
+      DefaultRotationValue:
+        value:
+          x: 0.68701035
+          y: 0.20344968
+          z: -0.25141108
+          w: 0.6507054
+      DefaultScaleValue:
+        x: 1
+        y: 0.99999994
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-pelvis.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.0000000037252903
+        y: 0.0000000037252903
+        z: 0.00000004307367
+      DefaultRotationValue:
+        value:
+          x: -0.0519705
+          y: 0.21240352
+          z: -0.6646402
+          w: 0.7144489
+      DefaultScaleValue:
+        x: 0.99999964
+        y: 0.9999997
+        z: 0.99999964
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-pelvis.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000037252903
+        y: 0.0000000018626451
+        z: 0.00000004353933
+      DefaultRotationValue:
+        value:
+          x: -0.05197055
+          y: -0.21240348
+          z: 0.6646402
+          w: 0.7144489
+      DefaultScaleValue:
+        x: 0.9999997
+        y: 0.9999997
+        z: 0.9999996
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000027939677
+        y: 0.0000000027939677
+        z: -0.12084782
+      DefaultRotationValue:
+        value:
+          x: -0.00000008754432
+          y: -0.0000000046566124
+          z: 0.000000024796464
+          w: 1
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.99999994
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000010244548
+        y: 0
+        z: -0.14098935
+      DefaultRotationValue:
+        value:
+          x: 0.018985733
+          y: 0.007728693
+          z: 0.004473379
+          w: 0.9997799
+      DefaultScaleValue:
+        x: 1
+        y: 0.9999999
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000005122274
+        y: -0.000000012572855
+        z: -0.16113023
+      DefaultRotationValue:
+        value:
+          x: 0.019120289
+          y: 0.00754348
+          z: 0.013349772
+          w: 0.9996996
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 0.99999994
+        z: 0.9999998
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.05276483
+        y: -0.007900274
+        z: -0.00015981801
+      DefaultRotationValue:
+        value:
+          x: -0.00000009319704
+          y: 0.714243
+          z: -0.6998978
+          w: -0.000000095107204
+      DefaultScaleValue:
+        x: 0.999999
+        y: 0.9999998
+        z: 0.99999976
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.052764803
+        y: -0.007900288
+        z: -0.00015975535
+      DefaultRotationValue:
+        value:
+          x: -0.00000009319704
+          y: 0.714243
+          z: -0.6998978
+          w: -0.000000095107204
+      DefaultScaleValue:
+        x: 0.999999
+        y: 0.9999998
+        z: 0.99999976
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.06305906
+        y: -0.0004940815
+        z: -0.16380174
+      DefaultRotationValue:
+        value:
+          x: 0.5736907
+          y: 0.6085593
+          z: 0.4072979
+          w: 0.36693725
+      DefaultScaleValue:
+        x: 0.9999998
+        y: 0.9999995
+        z: 0.9999991
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000010430813
+        y: 0.00000042840838
+        z: -0.13042396
+      DefaultRotationValue:
+        value:
+          x: 0.5040719
+          y: -0.07290496
+          z: -0.6894507
+          w: 0.5150285
+      DefaultScaleValue:
+        x: 1.0306463
+        y: 1.0306462
+        z: 0.9414165
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000059604645
+        y: 0.000000029802322
+        z: -0.10443442
+      DefaultRotationValue:
+        value:
+          x: 0.0000006570765
+          y: -0.00000032759664
+          z: -0.14571679
+          w: 0.98932636
+      DefaultScaleValue:
+        x: 0.9999991
+        y: 0.99999887
+        z: 1.000002
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: 0.000000048428774
+        z: -0.10443433
+      DefaultRotationValue:
+        value:
+          x: 0.75358385
+          y: -0.17755227
+          z: -0.14880726
+          w: 0.61517715
+      DefaultScaleValue:
+        x: 0.9968233
+        y: 1.0877411
+        z: 0.92283845
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000007450581
+        y: -0.00000004284084
+        z: -0.13335441
+      DefaultRotationValue:
+        value:
+          x: -0.00000021210923
+          y: -0.000000059139108
+          z: 0.0022469396
+          w: 0.9999975
+      DefaultScaleValue:
+        x: 1.0000006
+        y: 1.0000001
+        z: 1.0000002
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000024214387
+        y: -0.000000049360096
+        z: -0.13335456
+      DefaultRotationValue:
+        value:
+          x: -0.02093155
+          y: 0.26049593
+          z: 0.0021684882
+          w: 0.9652456
+      DefaultScaleValue:
+        x: 0.99473524
+        y: 0.9734877
+        z: 1.035246
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0048692822
+        y: 0.009875238
+        z: -0.028329693
+      DefaultRotationValue:
+        value:
+          x: 0.08229238
+          y: 0.16488783
+          z: -0.5946463
+          w: 0.78258276
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1.0000001
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000059837475
+        y: 0.00000008009374
+        z: -0.09118265
+      DefaultRotationValue:
+        value:
+          x: -0.16227245
+          y: 0.3558577
+          z: 0.91992474
+          w: 0.027774848
+      DefaultScaleValue:
+        x: 0.9999998
+        y: 0.9999999
+        z: 0.9999997
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L/DEF-f_index.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000001839362
+        y: -0.000000035302946
+        z: -0.03587413
+      DefaultRotationValue:
+        value:
+          x: 0.69327337
+          y: 0.05097242
+          z: 0.0037264908
+          w: 0.7188602
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1.0000006
+        z: 0.99999857
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L/DEF-f_index.02.L/DEF-f_index.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000014901161
+        y: 0.000000035390258
+        z: -0.038515266
+      DefaultRotationValue:
+        value:
+          x: 0.42961138
+          y: 0.029355466
+          z: -0.000011148187
+          w: 0.9025366
+      DefaultScaleValue:
+        x: 1
+        y: 1.0000008
+        z: 0.99999374
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.015490591
+        y: -0.028937671
+        z: -0.012786537
+      DefaultRotationValue:
+        value:
+          x: 0.29116932
+          y: 0.14525883
+          z: 0.8816035
+          w: -0.34190005
+      DefaultScaleValue:
+        x: 0.99999964
+        y: 0.99999994
+        z: 1.0000002
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L/DEF-thumb.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000017436105
+        y: -0.00000013317913
+        z: -0.04339179
+      DefaultRotationValue:
+        value:
+          x: 0.22741282
+          y: 0.29178074
+          z: -0.07199705
+          w: 0.9262634
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 0.9999998
+        z: 0.9999997
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L/DEF-thumb.02.L/DEF-thumb.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000024680048
+        y: -0.00000003236346
+        z: -0.04504087
+      DefaultRotationValue:
+        value:
+          x: -0.08144419
+          y: 0.21740268
+          z: 0.08492288
+          w: 0.96896386
+      DefaultScaleValue:
+        x: 1.0000002
+        y: 1
+        z: 0.99999917
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.00075846165
+        y: 0.0029483386
+        z: -0.03500876
+      DefaultRotationValue:
+        value:
+          x: 0.02771894
+          y: 0.03333773
+          z: -0.5848774
+          w: 0.80996215
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 1.0000001
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.00000002514571
+        y: 0.000000031664968
+        z: -0.10542308
+      DefaultRotationValue:
+        value:
+          x: -0.34049416
+          y: -0.018806536
+          z: 0.020372616
+          w: 0.9398378
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1
+        z: 0.99999845
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L/DEF-f_middle.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000006693881
+        y: 0.0000001314329
+        z: -0.036939252
+      DefaultRotationValue:
+        value:
+          x: -0.7413044
+          y: -0.039222017
+          z: -0.014684751
+          w: 0.669861
+      DefaultScaleValue:
+        x: 0.9999997
+        y: 1.0000014
+        z: 1.0000024
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L/DEF-f_middle.02.L/DEF-f_middle.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000017229468
+        y: -0.000000014901161
+        z: -0.03432552
+      DefaultRotationValue:
+        value:
+          x: -0.4314567
+          y: -0.032327276
+          z: 0.0000009515636
+          w: 0.9015542
+      DefaultScaleValue:
+        x: 1
+        y: 0.99999833
+        z: 0.9999998
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.0011765882
+        y: -0.0032657892
+        z: -0.036586907
+      DefaultRotationValue:
+        value:
+          x: -0.026459461
+          y: -0.039180245
+          z: -0.5893456
+          w: 0.8064965
+      DefaultScaleValue:
+        x: 1.0000005
+        y: 1.0000004
+        z: 1.0000006
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000029802322
+        y: 0.000000013038516
+        z: -0.110254176
+      DefaultRotationValue:
+        value:
+          x: -0.336824
+          y: 0.04792489
+          z: 0.047965497
+          w: 0.9391231
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.99999994
+        z: 0.9999981
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L/DEF-f_ring.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.0000000026775524
+        y: 0.00000009278301
+        z: -0.029140322
+      DefaultRotationValue:
+        value:
+          x: -0.83395046
+          y: -0.05523582
+          z: -0.00472299
+          w: 0.54904777
+      DefaultScaleValue:
+        x: 1
+        y: 1.0000018
+        z: 1.0000033
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L/DEF-f_ring.02.L/DEF-f_ring.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000005122274
+        y: 0.000000011175871
+        z: -0.026724456
+      DefaultRotationValue:
+        value:
+          x: -0.5221094
+          y: -0.039097313
+          z: -0.000002295952
+          w: 0.85198194
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.99999756
+        z: 0.9999991
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.0019534752
+        y: -0.01037818
+        z: -0.027543016
+      DefaultRotationValue:
+        value:
+          x: -0.121141486
+          y: -0.13588172
+          z: -0.6002619
+          w: 0.778811
+      DefaultScaleValue:
+        x: 1
+        y: 1
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000002682209
+        y: 0.00000008195639
+        z: -0.08849533
+      DefaultRotationValue:
+        value:
+          x: -0.35689914
+          y: 0.16249804
+          z: 0.1256475
+          w: 0.91127944
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 1
+        z: 0.99999875
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000034226105
+        y: -0.000000059604645
+        z: -0.033426553
+      DefaultRotationValue:
+        value:
+          x: -0.67573196
+          y: -0.008826836
+          z: -0.045921925
+          w: 0.7356627
+      DefaultScaleValue:
+        x: 1.0000002
+        y: 1.0000014
+        z: 1.0000005
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L/DEF-f_pinky.03.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000019092113
+        y: 0.00000002142042
+        z: -0.027070591
+      DefaultRotationValue:
+        value:
+          x: -0.8602474
+          y: -0.064988725
+          z: 0.0000049371884
+          w: 0.5057183
+      DefaultScaleValue:
+        x: 1
+        y: 0.9999998
+        z: 0.9999989
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.06305903
+        y: -0.00021491945
+        z: -0.16379577
+      DefaultRotationValue:
+        value:
+          x: 0.6119873
+          y: -0.46633515
+          z: -0.41291124
+          w: 0.48734745
+      DefaultScaleValue:
+        x: 0.9999999
+        y: 0.99999946
+        z: 0.9999991
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000074505806
+        y: 0.000000019557774
+        z: -0.13042392
+      DefaultRotationValue:
+        value:
+          x: 0.7077341
+          y: -0.09890554
+          z: 0.5625905
+          w: 0.41571876
+      DefaultScaleValue:
+        x: 1.0302274
+        y: 1.0302272
+        z: 0.9421813
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000026600901
+        y: 0.00000003958121
+        z: -0.10448937
+      DefaultRotationValue:
+        value:
+          x: 0.00000038207523
+          y: -0.00000026507777
+          z: -0.00059151615
+          w: 0.9999998
+      DefaultScaleValue:
+        x: 1.0000007
+        y: 1.0000002
+        z: 0.9999993
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000122818165
+        y: -0.000000015599653
+        z: -0.10448925
+      DefaultRotationValue:
+        value:
+          x: 0.77177143
+          y: -0.0007142085
+          z: -0.0006026797
+          w: 0.63589936
+      DefaultScaleValue:
+        x: 0.99687463
+        y: 1.0867835
+        z: 0.9235484
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.00000000721775
+        y: -0.000000010244548
+        z: -0.13335444
+      DefaultRotationValue:
+        value:
+          x: 0.000000054251327
+          y: -0.00000011895966
+          z: 0.040917303
+          w: 0.99916255
+      DefaultScaleValue:
+        x: 1.000001
+        y: 1.0000007
+        z: 0.9999993
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000022351742
+        y: -0.000000026077032
+        z: -0.13335466
+      DefaultRotationValue:
+        value:
+          x: 0.068374135
+          y: -0.21717817
+          z: 0.040846657
+          w: 0.97287726
+      DefaultScaleValue:
+        x: 0.988976
+        y: 0.97482276
+        z: 1.0393871
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.0043459013
+        y: 0.009883249
+        z: -0.02814763
+      DefaultRotationValue:
+        value:
+          x: 0.08553775
+          y: -0.15330996
+          z: 0.5921255
+          w: 0.78649014
+      DefaultScaleValue:
+        x: 0.99999964
+        y: 1.0000004
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000018626451
+        y: -0.00000005029142
+        z: -0.09008018
+      DefaultRotationValue:
+        value:
+          x: -0.35882512
+          y: 0.1274459
+          z: 0.029360173
+          w: 0.924197
+      DefaultScaleValue:
+        x: 1
+        y: 0.99999976
+        z: 0.9999982
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R/DEF-f_index.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000661239
+        y: 0.000000026077032
+        z: -0.040168785
+      DefaultRotationValue:
+        value:
+          x: -0.694565
+          y: 0.028498936
+          z: 0.0077725733
+          w: 0.71882325
+      DefaultScaleValue:
+        x: 0.99999976
+        y: 1.0000017
+        z: 0.9999995
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R/DEF-f_index.02.R/DEF-f_index.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000040978193
+        y: 0.000000014901161
+        z: -0.03694483
+      DefaultRotationValue:
+        value:
+          x: -0.43002516
+          y: 0.022304153
+          z: -0.00000034438068
+          w: 0.9025414
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 1.0000002
+        z: 0.99999803
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.015572127
+        y: -0.02788943
+        z: -0.010820707
+      DefaultRotationValue:
+        value:
+          x: -0.31796634
+          y: 0.14757793
+          z: 0.89846694
+          w: 0.26433945
+      DefaultScaleValue:
+        x: 0.9999998
+        y: 0.9999998
+        z: 1.0000007
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R/DEF-thumb.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000027008355
+        y: 0
+        z: -0.041483156
+      DefaultRotationValue:
+        value:
+          x: 0.19737123
+          y: -0.33041283
+          z: 0.07226546
+          w: 0.92013574
+      DefaultScaleValue:
+        x: 0.9999994
+        y: 0.9999997
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R/DEF-thumb.02.R/DEF-thumb.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000029802322
+        y: 0.00000009313226
+        z: -0.046106115
+      DefaultRotationValue:
+        value:
+          x: -0.075811625
+          y: -0.25564685
+          z: -0.079900496
+          w: 0.96047556
+      DefaultScaleValue:
+        x: 0.99999976
+        y: 0.99999994
+        z: 0.99999815
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00093299896
+        y: 0.0036865063
+        z: -0.034579873
+      DefaultRotationValue:
+        value:
+          x: 0.031739373
+          y: -0.037025508
+          z: 0.5867049
+          w: 0.8083311
+      DefaultScaleValue:
+        x: 0.9999997
+        y: 1.0000002
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000023283064
+        y: -0.00000012665987
+        z: -0.10432168
+      DefaultRotationValue:
+        value:
+          x: -0.33467296
+          y: 0.010014434
+          z: 0.0075625074
+          w: 0.9422508
+      DefaultScaleValue:
+        x: 1.0000002
+        y: 1.0000001
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R/DEF-f_middle.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000035390258
+        y: -0.000000040978193
+        z: -0.036880083
+      DefaultRotationValue:
+        value:
+          x: -0.7415102
+          y: 0.035064753
+          z: 0.0061640115
+          w: 0.6699963
+      DefaultScaleValue:
+        x: 1
+        y: 1.0000002
+        z: 1.0000004
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R/DEF-f_middle.02.R/DEF-f_middle.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000048428774
+        y: 0.000000037252903
+        z: -0.03539501
+      DefaultRotationValue:
+        value:
+          x: -0.43198013
+          y: 0.02441162
+          z: -0.0000015356267
+          w: 0.9015527
+      DefaultScaleValue:
+        x: 0.9999999
+        y: 0.99999964
+        z: 0.9999965
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.00051783025
+        y: -0.0026837513
+        z: -0.03543575
+      DefaultRotationValue:
+        value:
+          x: -0.02911262
+          y: 0.033295188
+          z: 0.5962556
+          w: 0.8015754
+      DefaultScaleValue:
+        x: 0.99999964
+        y: 1.0000002
+        z: 0.99999976
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000052154064
+        y: 0.000000059604645
+        z: -0.10681073
+      DefaultRotationValue:
+        value:
+          x: -0.32833484
+          y: -0.055000097
+          z: -0.020160826
+          w: 0.94274324
+      DefaultScaleValue:
+        x: 0.9999998
+        y: 1
+        z: 1.000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R/DEF-f_ring.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000002514571
+        y: -0.000000033527613
+        z: -0.029448248
+      DefaultRotationValue:
+        value:
+          x: -0.83383536
+          y: 0.05695101
+          z: -0.004907812
+          w: 0.5490456
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.9999992
+        z: 0.99999875
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R/DEF-f_ring.02.R/DEF-f_ring.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000010244548
+        y: -0.0000000037252903
+        z: -0.02898931
+      DefaultRotationValue:
+        value:
+          x: -0.5226447
+          y: 0.031007892
+          z: -0.0000012483712
+          w: 0.8519866
+      DefaultScaleValue:
+        x: 0.9999998
+        y: 1.000001
+        z: 0.9999992
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0018242821
+        y: -0.010222491
+        z: -0.027190521
+      DefaultRotationValue:
+        value:
+          x: -0.124731585
+          y: 0.14022788
+          z: 0.602396
+          w: 0.7758204
+      DefaultScaleValue:
+        x: 0.9999997
+        y: 1.0000005
+        z: 0.9999999
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000059604645
+        y: -0.0000000037252903
+        z: -0.08784454
+      DefaultRotationValue:
+        value:
+          x: -0.3535324
+          y: -0.18898363
+          z: -0.117998116
+          w: 0.90850234
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.99999994
+        z: 0.9999982
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000020489097
+        y: 0.00000012665987
+        z: -0.034069955
+      DefaultRotationValue:
+        value:
+          x: -0.6757478
+          y: -0.007491183
+          z: 0.04697606
+          w: 0.73559636
+      DefaultScaleValue:
+        x: 1
+        y: 1.0000018
+        z: 0.999996
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R/DEF-f_pinky.03.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.00000010151416
+        y: -0.000000007450581
+        z: -0.028504968
+      DefaultRotationValue:
+        value:
+          x: -0.861497
+          y: 0.045433696
+          z: -0.0000022142435
+          w: 0.5057259
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1.0000027
+        z: 1.0000001
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000007450581
+        y: -0.000000019499566
+        z: -0.18127206
+      DefaultRotationValue:
+        value:
+          x: 0.037646778
+          y: -0.03799953
+          z: 0.1154729
+          w: 0.99186933
+      DefaultScaleValue:
+        x: 1
+        y: 0.99999994
+        z: 0.99999994
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000005122274
+        y: 0.000000011641532
+        z: -0.037502274
+      DefaultRotationValue:
+        value:
+          x: 0.00000025685566
+          y: 0.00000041304253
+          z: 0.1861409
+          w: 0.9825231
+      DefaultScaleValue:
+        x: 1.0000002
+        y: 1
+        z: 0.99999994
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000012340024
+        y: -0.000000015215846
+        z: -0.037502035
+      DefaultRotationValue:
+        value:
+          x: 0.052131712
+          y: 0.016334964
+          z: -0.009604222
+          w: 0.9984604
+      DefaultScaleValue:
+        x: 0.99999994
+        y: 0.99999994
+        z: 0.9999999
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L
+    Properties:
+      DefaultTranslationValue:
+        x: -0.08964918
+        y: 0.067237735
+        z: 0.058439817
+      DefaultRotationValue:
+        value:
+          x: 0.9638487
+          y: -0.020098785
+          z: 0.13964958
+          w: 0.22603065
+      DefaultScaleValue:
+        x: 1.0149705
+        y: 1.0149704
+        z: 0.97071826
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L/DEF-thigh.L.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000037252903
+        y: 0.000000018626451
+        z: -0.20878091
+      DefaultRotationValue:
+        value:
+          x: 0.000000034710773
+          y: 0.000000008852412
+          z: -0.033086933
+          w: 0.9994525
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1
+        z: 0.9999999
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000026077032
+        y: -0.000000022351742
+        z: -0.20878108
+      DefaultRotationValue:
+        value:
+          x: 0.4305455
+          y: -0.015518144
+          z: -0.032743935
+          w: 0.9018412
+      DefaultScaleValue:
+        x: 1.003991
+        y: 1.0319169
+        z: 0.9661346
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000014901161
+        y: 0.000000007450581
+        z: -0.13438904
+      DefaultRotationValue:
+        value:
+          x: -0.00000010080535
+          y: 0.00000018667654
+          z: 0.06640573
+          w: 0.9977927
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 1.0000001
+        z: 1
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000029802322
+        y: 0.000000006519258
+        z: -0.13438892
+      DefaultRotationValue:
+        value:
+          x: -0.6156925
+          y: -0.12011719
+          z: 0.05769128
+          w: 0.77663785
+      DefaultScaleValue:
+        x: 0.9821324
+        y: 1.0351748
+        z: 0.9839464
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-toe.L
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000053288886
+        y: 0.000000013969839
+        z: -0.19342624
+      DefaultRotationValue:
+        value:
+          x: 0.0060918736
+          y: 0.3443265
+          z: 0.9388276
+          w: 0.0022251592
+      DefaultScaleValue:
+        x: 0.9999612
+        y: 1.0000103
+        z: 1.000029
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.093107715
+        y: 0.042832337
+        z: 0.063819356
+      DefaultRotationValue:
+        value:
+          x: 0.96824163
+          y: 0.01684932
+          z: -0.23865704
+          w: 0.07257498
+      DefaultScaleValue:
+        x: 1.014639
+        y: 1.0146389
+        z: 0.971353
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R/DEF-thigh.R.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.000000026077032
+        y: 0.0000000037252903
+        z: -0.20881516
+      DefaultRotationValue:
+        value:
+          x: -0.00000008909584
+          y: 0.00000008440661
+          z: 0.1177875
+          w: 0.99303883
+      DefaultScaleValue:
+        x: 0.9999997
+        y: 0.9999999
+        z: 1.0000005
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: -0.000000033527613
+        z: -0.20881529
+      DefaultRotationValue:
+        value:
+          x: 0.44170526
+          y: 0.057679463
+          z: 0.11656678
+          w: 0.8876834
+      DefaultScaleValue:
+        x: 1.0038726
+        y: 1.0325679
+        z: 0.9655725
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001
+    Properties:
+      DefaultTranslationValue:
+        x: -0.0000000037252903
+        y: 0.0000000055879354
+        z: -0.13451728
+      DefaultRotationValue:
+        value:
+          x: 0.00000017494109
+          y: -0.00000004105284
+          z: 0.060274642
+          w: 0.9981819
+      DefaultScaleValue:
+        x: 1.0000001
+        y: 0.9999999
+        z: 0.99999964
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000007450581
+        y: 0.000000009313226
+        z: -0.13451721
+      DefaultRotationValue:
+        value:
+          x: -0.65279245
+          y: 0.15931241
+          z: 0.06357139
+          w: 0.73786193
+      DefaultScaleValue:
+        x: 0.9875277
+        y: 1.031457
+        z: 0.9823458
+  - ID:
+      Path: Armature2/root/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-toe.R
+    Properties:
+      DefaultTranslationValue:
+        x: 0.000000034400728
+        y: -0.0000000060535967
+        z: -0.19589114
+      DefaultRotationValue:
+        value:
+          x: -0.0058908267
+          y: 0.33924684
+          z: 0.94067657
+          w: -0.0021111928
+      DefaultScaleValue:
+        x: 0.99997365
+        y: 1.0000058
+        z: 1.0000205
+  - ID:
+      Path: mesh
+    Properties:
+      DefaultTranslationValue:
+        x: 0
+        y: 0
+        z: -0
+      DefaultRotationValue:
+        value:
+          x: 0.000000021855701
+          y: -3.5527162e-15
+          z: 7.764706e-23
+          w: 1
+      DefaultScaleValue:
+        x: 1
+        y: 1
+        z: 1
+  m_InactiveTransformChannels: []
+  m_IntChannels: []
+  m_FloatChannels:
+  - ID:
+      Path: mesh
+      AttributeName: blendShape.Test
+      ValueType: 0
+      m_ComponentName: UnityEngine.SkinnedMeshRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    DefaultValue: 0
+  m_QuaternionChannels: []
+  m_Root:
+    Path: 
