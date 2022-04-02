@@ -19,7 +19,11 @@
         "Unity.InputSystem",
         "RPG.Core",
         "RPG.Mouvement",
-        "Unity.AI.Navigation"
+        "Unity.AI.Navigation",
+        "Unity.Animation.Rigging",
+        "Unity.Deformations",
+        "UnityEngine.UI",
+        "UnityEngine.UIElementsModule"
     ],
     "includePlatforms": [
         "Android",

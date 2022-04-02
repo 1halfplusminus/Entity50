@@ -189,7 +189,6 @@ namespace RPG.Hybrid
             .ForEach((Entity e, CinemachineVirtualCamera camera, in Follow target) =>
             {
                 var transform = GetTransform(target.Entity, EntityManager);
-                Debug.Log("Here");
                 if (transform != null)
                 {
                     camera.m_Follow = transform;

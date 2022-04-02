@@ -25,7 +25,6 @@ public class NavMeshAgentConversionSystem : GameObjectConversionSystem
        });
         Entities.ForEach((NavMeshObstacle obstacle) =>
         {
-            // AddHybridComponent(obstacle);
             var entity = GetPrimaryEntity(obstacle);
             DstEntityManager.AddComponentObject(entity, obstacle);
         });
