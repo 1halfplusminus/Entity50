@@ -23,6 +23,22 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.animation": {
+      "version": "file:/home/dartuchiwa/com.unity.animation@0.50.0-preview.1",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.entities": "0.17.0-preview.41",
+        "com.unity.collections": "0.15.0-preview.21",
+        "com.unity.jobs": "0.50.0-preview.8",
+        "com.unity.burst": "1.4.1",
+        "com.unity.test-framework": "1.1.20",
+        "com.unity.test-framework.performance": "2.3.1-preview",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.rendering.hybrid": "0.50.0-preview.24"
+      }
+    },
     "com.unity.animation.rigging": {
       "version": "1.0.3",
       "depth": 0,
