@@ -15,7 +15,8 @@
         "Unity.Scenes",
         "Unity.Transforms",
         "Unity.InputSystem",
-        "RPG.Core"
+        "RPG.Core",
+        "RPG.Animation"
     ],
     "includePlatforms": [
         "Android",

@@ -3,7 +3,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 using Unity.Physics;
 using UnityEngine;
-using RPG.Mouvement;
+using RPG.Core;
 using RPG.Hybrid;
 
 public class TerrainConversionSystem : GameObjectConversionSystem

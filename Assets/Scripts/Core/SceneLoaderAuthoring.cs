@@ -41,7 +41,7 @@ public partial class SceneLoaderSystem : SystemBase
 
         for (int i = 0; i < requests.Length; i += 1)
         {
-            m_SceneSystem.LoadSceneAsync(requests[i].Guid);
+            m_SceneSystem.LoadSceneAsync(requests[i].Guid, new SceneSystem.LoadParameters{Flags = SceneLoadFlags.LoadAsGOScene });
         }
 
         requests.Dispose();

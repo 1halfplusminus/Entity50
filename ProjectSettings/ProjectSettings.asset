@@ -597,7 +597,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: ENABLE_COMPUTE_DEFORMATIONS;UNITY_ENABLE_ANIMATION_ANIMATOR_CONVERSION
+    1: ENABLE_COMPUTE_DEFORMATIONS
     7: ENABLE_COMPUTE_DEFORMATIONS
   additionalCompilerArguments: {}
   platformArchitecture: {}

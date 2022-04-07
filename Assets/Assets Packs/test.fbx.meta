@@ -6,42 +6,81 @@ ModelImporter:
   - first:
       74: -1908066282119040219
     second: Armature2|Push
+  - first:
+      74: -1158276215437337059
+    second: Armature2|__TPose
+  - first:
+      74: -2495409402306456800
+    second: Armature2|Swinging Bake
+  - first:
+      74: 8028984021404562088
+    second: Armature2|Walk Bake
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 9479412e09f0bc530a3cf24778921fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: body.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 9479412e09f0bc530a3cf24778921fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_skin
+    second: {fileID: 2100000, guid: 9479412e09f0bc530a3cf24778921fc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: body_skin.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 9479412e09f0bc530a3cf24778921fc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: eye.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 8313bf2c24a7711668033e3db2270972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face
+    second: {fileID: 2100000, guid: 6d2ab315cd2ecdefeba7b6e9425efd2a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: face.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 6d2ab315cd2ecdefeba7b6e9425efd2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face_skin
+    second: {fileID: 2100000, guid: 6d2ab315cd2ecdefeba7b6e9425efd2a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: face_skin.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 6d2ab315cd2ecdefeba7b6e9425efd2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hairstyle
+    second: {fileID: 2100000, guid: 6b37cb26a04c1febaa3c2b42ac5bfc54, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hairstyle.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 6b37cb26a04c1febaa3c2b42ac5bfc54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ring
+    second: {fileID: 2100000, guid: 7abfc4517460007e6bd852f2db85eacf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ring.001
-    second: {fileID: 2100000, guid: a2cc68dabe6e7b05fa7d855e2c078b8d, type: 2}
+    second: {fileID: 2100000, guid: 7abfc4517460007e6bd852f2db85eacf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +92,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Avatar creation failed:\n\tCannot find root motion transform
+      'root'.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -70,18 +110,76 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature2|Push
-      takeName: Armature2|Push
+      name: Armature2|__TPose
+      takeName: Armature2|__TPose
       internalID: 0
       firstFrame: 0
-      lastFrame: 68
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature2|Swinging Bake
+      takeName: Armature2|Swinging Bake
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature2|Walk Bake
+      takeName: Armature2|Walk Bake
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 43
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -538,7 +636,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: root
+    rootMotionBoneName: Armature2
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
