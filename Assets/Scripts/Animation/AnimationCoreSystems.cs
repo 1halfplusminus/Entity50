@@ -6,29 +6,34 @@ using Unity.Mathematics;
 using Unity.Transforms;
 using Unity.Collections;
 using Unity.Jobs;
-using UnityEngine.Jobs;
+
 using Unity.Burst;
 using Unity.Animation;
 using Unity.Deformations;
 
-public class ComputeDeformation: ComputeDeformationDataBase{
-    
+public class ComputeDeformation : ComputeDeformationDataBase
+{
+
 }
-public struct AnimatedEntity: IBufferElementData{
-   public Entity Value;
+public struct AnimatedEntity : IBufferElementData
+{
+    public Entity Value;
 }
 
-public struct AnimationClips: IBufferElementData{
+public struct AnimationClips : IBufferElementData
+{
     public BlobAssetReference<Clip> Clip;
     public BlobAssetReference<ClipInstance> ClipInstance;
 }
 
-public struct CurrentlyPlayingClip : IBufferElementData{
+public struct CurrentlyPlayingClip : IBufferElementData
+{
     public FixedString32Bytes Name;
     public float Weight;
 }
 
-public struct AnimationStreamComponent: IComponentData{
+public struct AnimationStreamComponent : IComponentData
+{
     public AnimationStream Value;
 }
 
@@ -38,7 +43,7 @@ public partial class AnimationStateSystem : SystemBase
     protected override void OnCreate()
     {
         base.OnCreate();
-        query = GetEntityQuery(typeof(Rig),typeof(AnimationClips));
+        query = GetEntityQuery(typeof(Rig), typeof(AnimationClips));
         query.SetChangedVersionFilter(ComponentType.ReadWrite<AnimationClips>());
         RequireForUpdate(query);
     }
@@ -47,16 +52,19 @@ public partial class AnimationStateSystem : SystemBase
 
         var entities = query.ToEntityArray(Allocator.Temp);
         var rigs = query.ToComponentDataArray<Rig>(Allocator.Temp);
-        for(int i =0; i < entities.Length; i++){
+        for (int i = 0; i < entities.Length; i++)
+        {
             var clips = EntityManager.GetBuffer<AnimationClips>(entities[i], false);
-            for(int j =0; j < clips.Length; j++){
+            for (int j = 0; j < clips.Length; j++)
+            {
                 var clip = clips[j];
-                if(!clip.ClipInstance.IsCreated){
-                    var clipInstance = ClipInstanceBuilder.Create(rigs[i].Value,clip.Clip);
+                if (!clip.ClipInstance.IsCreated)
+                {
+                    var clipInstance = ClipInstanceBuilder.Create(rigs[i].Value, clip.Clip);
                     clip.ClipInstance = clipInstance;
                     clips[j] = clip;
                 }
-                
+
             }
         }
         entities.Dispose();
@@ -66,7 +74,7 @@ public partial class AnimationStateSystem : SystemBase
 
 
 [BurstCompile]
-public partial struct AnimationSystemBase : ISystem
+public partial struct AnimationCoreSystem : ISystem
 {
     EntityCommandBufferSystem entityCommandBufferSystem;
     public void OnCreate(ref SystemState state)
@@ -78,10 +86,9 @@ public partial struct AnimationSystemBase : ISystem
     {
 
     }
-   
+
     public void OnUpdate(ref SystemState state)
     {
-        var time = Time.time;
         var cb = entityCommandBufferSystem.CreateCommandBuffer();
         var cbp = cb.AsParallelWriter();
         state.Entities
@@ -89,56 +96,70 @@ public partial struct AnimationSystemBase : ISystem
             int entityInQueryIndex,
             Entity e,
             ref DynamicBuffer<AnimatedData> animatedDatas,
-            in Rig RigRef)=>{
-           cbp.AddComponent(entityInQueryIndex,e, new AnimationStreamComponent {
-               Value = AnimationStream.Create(RigRef.Value,animatedDatas.AsNativeArray()),
-           } );
+            in Rig RigRef) =>
+        {
+            cbp.AddComponent(entityInQueryIndex, e, new AnimationStreamComponent
+            {
+                Value = AnimationStream.Create(RigRef.Value, animatedDatas.AsNativeArray())
+            });
         }).ScheduleParallel();
         var localToWorlds = state.GetComponentDataFromEntity<LocalToWorld>(true);
         state.Entities
         .WithReadOnly(localToWorlds)
-        .ForEach((ref RigRootEntity rigRootEntity)=>{
+        .ForEach((ref RigRootEntity rigRootEntity) =>
+        {
             var localToWorld = localToWorlds[rigRootEntity.Value];
             var rootTransform = mathex.AffineTransform(localToWorld.Value);
-            rigRootEntity.RemapToRootMatrix =rootTransform;
+            rigRootEntity.RemapToRootMatrix = rootTransform;
         }).ScheduleParallel();
-        
+
         state
         .Entities
-        .ForEach((int entityInQueryIndex,ref DynamicBuffer<AnimatedEntity> animatedEntities,in AnimationStreamComponent streamComponent)=>{
-                            
+        .ForEach((int entityInQueryIndex, ref DynamicBuffer<AnimatedEntity> animatedEntities, in AnimationStreamComponent streamComponent) =>
+        {
+
             var stream = streamComponent.Value;
-            for(int i = 0; i < animatedEntities.Length; i++){
-                    if(i < stream.RotationCount ){
-                        var rotation = stream.GetLocalToParentRotation(i);
-                        cbp.SetComponent(entityInQueryIndex,animatedEntities[i].Value,new Rotation{ Value =rotation });
-                    }
-                    if( i < stream.TranslationCount){
-                        var translation = stream.GetLocalToParentTranslation(i);
-                        cbp.SetComponent(entityInQueryIndex,animatedEntities[i].Value,new Translation{ Value = translation });
-                    }
-                    if( i < stream.ScaleCount){
-                        var scale = stream.GetLocalToParentScale(i);
-                        cbp.AddComponent(entityInQueryIndex,animatedEntities[i].Value,new CompositeScale{Value = float4x4.Scale(scale) });
-                    }
+            for (int i = 0; i < animatedEntities.Length; i++)
+            {
+                if (i < stream.RotationCount)
+                {
+                    var rotation = stream.GetLocalToParentRotation(i);
+                    cbp.SetComponent(entityInQueryIndex, animatedEntities[i].Value, new Rotation { Value = rotation });
                 }
+                if (i < stream.TranslationCount)
+                {
+                    var translation = stream.GetLocalToParentTranslation(i);
+                    cbp.SetComponent(entityInQueryIndex, animatedEntities[i].Value, new Translation { Value = translation });
+                }
+                if (i < stream.ScaleCount)
+                {
+                    var scale = stream.GetLocalToParentScale(i);
+                    cbp.AddComponent(entityInQueryIndex, animatedEntities[i].Value, new CompositeScale { Value = float4x4.Scale(scale) });
+                }
+            }
         }).ScheduleParallel();
         state
         .Entities
-        .ForEach((ref DynamicBuffer<AnimatedLocalToRoot> animatedDatas,in AnimationStreamComponent streamComponent)=>{
-                            
-            var stream =  streamComponent.Value;
-            for(int i = 0; i < animatedDatas.Length; i++){
-                 var localToRoot = stream.GetLocalToRootMatrix(i);
-                 animatedDatas[i] = new AnimatedLocalToRoot{Value = localToRoot};
+        .ForEach((ref DynamicBuffer<AnimatedLocalToRoot> animatedDatas, in AnimationStreamComponent streamComponent) =>
+        {
+
+            var stream = streamComponent.Value;
+            for (int i = 0; i < animatedDatas.Length; i++)
+            {
+                var localToRoot = stream.GetLocalToRootMatrix(i);
+                animatedDatas[i] = new AnimatedLocalToRoot { Value = localToRoot };
             }
         }).ScheduleParallel();
         var streams = state.GetComponentDataFromEntity<AnimationStreamComponent>();
-        state.Entities.WithReadOnly(streams).ForEach((ref DynamicBuffer<BlendShapeWeight> shapeKeys,in RigEntity rigEntity)=>{
-            if(streams.HasComponent(rigEntity.Value)){
+        state.Entities.WithReadOnly(streams).ForEach((ref DynamicBuffer<BlendShapeWeight> shapeKeys, in RigEntity rigEntity) =>
+        {
+            if (streams.HasComponent(rigEntity.Value))
+            {
                 var stream = streams[rigEntity.Value].Value;
-                for(int i = 0; i < stream.FloatCount ;i++){
-                    shapeKeys[i] = new BlendShapeWeight{
+                for (int i = 0; i < stream.FloatCount; i++)
+                {
+                    shapeKeys[i] = new BlendShapeWeight
+                    {
                         Value = stream.GetFloat(i)
                     };
                 }

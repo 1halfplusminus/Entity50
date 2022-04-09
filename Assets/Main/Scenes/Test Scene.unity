@@ -185,6 +185,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8693727932957814634, guid: 29f20c43fbdd114818d0b7b3f0ee1a86, type: 3}
   m_PrefabInstance: {fileID: 1402639517}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402639519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8693727932957814632, guid: 29f20c43fbdd114818d0b7b3f0ee1a86, type: 3}
+  m_PrefabInstance: {fileID: 1402639517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1402639520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402639519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfc37c0bd9d9330aaa6c67cd7391349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDLE: {fileID: 3276376045164768417, guid: 67324ad9c51afa046881015cb5b29d40, type: 2}
+  Walk: {fileID: 3276376045164768417, guid: 67324ad9c51afa046881015cb5b29d40, type: 2}
+  Run: {fileID: 3276376045164768417, guid: 67324ad9c51afa046881015cb5b29d40, type: 2}
+  Attack: {fileID: 0}
+  Dead: {fileID: 0}
 --- !u!1 &1800559831
 GameObject:
   m_ObjectHideFlags: 0

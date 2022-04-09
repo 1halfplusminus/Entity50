@@ -19,6 +19,8 @@
         "RPG.Core",
         "Unity.Animation",
         "Unity.Animation.Hybrid",
+        "Unity.Animation.DefaultGraphPipeline",
+        "Unity.Animation.Graph",
         "Unity.Deformations"
     ],
     "includePlatforms": [

@@ -103,25 +103,29 @@ namespace RPG.Animation
                 var playClips = batchInChunk.GetNativeArray(PlayClipTypeHandle);
                 for (int i = 0; i < characterAnimations.Length; i++)
                 {
-                    if(characterAnimations[i].Dead > 0){
-                        playClips[i] = new PlayClip { Index = characterAnimationSetups[i].Dead };
+                    var previousClip = playClips[i];
+                    PlayClip playClip;
+                    if (characterAnimations[i].Dead > 0){
+                       playClip = new PlayClip { Index = characterAnimationSetups[i].Dead };
                     }
                     else if(characterAnimations[i].Attack > 0){
-                        playClips[i] = new PlayClip { Index = characterAnimationSetups[i].Attack };
+                        playClip = new PlayClip { Index = characterAnimationSetups[i].Attack };
+                    }
+                    else if(characterAnimations[i].Run > 0) {
+                        playClip = new PlayClip { Index = characterAnimationSetups[i].Run, Weight = characterAnimations[i].Run  };
                     }
                     else if (characterAnimations[i].Move > 0)
                     {
-                        if(characterAnimations[i].Move > 0.2){
-                            playClips[i] = new PlayClip { Index = characterAnimationSetups[i].Run };
-                        } else{
-                            playClips[i] = new PlayClip { Index = characterAnimationSetups[i].Walk };
-                        }
+                        playClip = new PlayClip { Index = characterAnimationSetups[i].Run, Weight = characterAnimations[i].Move };
                     }
                     else
                     {
-                        playClips[i] = new PlayClip { Index = 0 };
+                        playClip = new PlayClip { Index = 0, Weight = 1 };
                     }
-
+                    if(playClip.Index != previousClip.Index){
+                        playClip.PreviousClip = previousClip.Index;
+                    }
+                    playClips[i] =playClip; 
                 }
 
             }
