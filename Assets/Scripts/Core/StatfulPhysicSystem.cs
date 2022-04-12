@@ -687,7 +687,7 @@ namespace RPG.Core
                 }).Schedule();
 
             // m_EndFramePhysicsSystem.AddInputDependency(Dependency);
-            // entitiesWithBuffersMap.Dispose(Dependency);
+            entitiesWithBuffersMap.Dispose(Dependency);
         }
 
         [BurstCompile]

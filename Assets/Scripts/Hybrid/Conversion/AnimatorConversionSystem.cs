@@ -12,6 +12,7 @@ using Unity.Animation;
 using Unity.Animation.Hybrid;
 using Unity.Deformations;
 
+namespace RPG.Animation{
 public class AnimatorConversionSystem : GameObjectConversionSystem
 {
     protected override void OnCreate()
@@ -38,13 +39,17 @@ public class AnimatorConversionSystem : GameObjectConversionSystem
             DeclareAssetDependency(animator.gameObject, animator.runtimeAnimatorController);
             DstEntityManager.AddBuffer<CurrentlyPlayingClip>(entity);
             var clipsBuffer =  DstEntityManager.AddBuffer<AnimationClips>(entity);
-            var nbClip = animator.runtimeAnimatorController.animationClips.Length;
-            for(int i =0 ; i < nbClip; i++){
-                var clip = animator.runtimeAnimatorController.animationClips[i];
-                var clipBlob = BlobAssetStore.GetClip(clip);
-                clipsBuffer.Add(new AnimationClips {Clip = clipBlob});
-            }
+            #if UNITY_EDITOR
+                var nbClip = animator.runtimeAnimatorController.animationClips.Length;
+                for(int i =0 ; i < nbClip; i++){
+                    var clip = animator.runtimeAnimatorController.animationClips[i];
+                    var clipBlob = BlobAssetStore.GetClip(clip);
+                    clipsBuffer.Add(new AnimationClips {Clip = clipBlob});
+                }
+            #endif
         });
     }
 }
 
+
+}

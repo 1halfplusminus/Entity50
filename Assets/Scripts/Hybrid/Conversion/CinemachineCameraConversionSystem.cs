@@ -6,10 +6,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
 using RPG.Hybrid;
-using Unity.Burst;
-using UnityEngine.Jobs;
-using Unity.Collections;
-using System.Collections.Generic;
 using System.Reflection;
 using System;
 using System.Linq;
@@ -22,9 +18,7 @@ namespace RPG.Hybrid
         public float4x4 LocalToWorld;
     }
 
-    public struct IsFollowingTarget : IComponentData { }
 
-    public struct IsLookingAtTarget : IComponentData { }
     public struct FollowedBy : IComponentData
     {
         public Entity Entity;

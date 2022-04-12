@@ -20,7 +20,8 @@
         "Unity.Animation.Hybrid",
         "RPG.Animation",
         "RPG.Core",
-        "RPG.Mouvement"
+        "RPG.Mouvement",
+        "RPG.Stats"
     ],
     "includePlatforms": [
         "Android",

@@ -26,7 +26,8 @@
         "UnityEngine.UI",
         "UnityEngine.UIElementsModule",
         "Unity.Animation",
-        "Unity.Animation.Hybrid"
+        "Unity.Animation.Hybrid",
+        "Unity.Timeline"
     ],
     "includePlatforms": [
         "Android",

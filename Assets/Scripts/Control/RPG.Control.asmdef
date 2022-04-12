@@ -18,7 +18,8 @@
         "Unity.InputSystem",
         "RPG.Core",
         "RPG.Combat",
-        "RPG.Mouvement"
+        "RPG.Mouvement",
+        "RPG.Animation"
     ],
     "includePlatforms": [
         "Android",

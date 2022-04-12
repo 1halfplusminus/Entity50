@@ -7,7 +7,7 @@ using Unity.Collections;
 
 namespace RPG.Animation
 {
-    internal struct ChangeAttackAnimation : IComponentData
+    public struct ChangeAttackAnimation : IComponentData
     {
         public BlobAssetReference<Clip> Animation;
     }

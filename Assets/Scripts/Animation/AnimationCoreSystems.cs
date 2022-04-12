@@ -11,6 +11,8 @@ using Unity.Burst;
 using Unity.Animation;
 using Unity.Deformations;
 
+
+namespace RPG.Animation{
 public class ComputeDeformation : ComputeDeformationDataBase
 {
 
@@ -167,4 +169,5 @@ public partial struct AnimationCoreSystem : ISystem
         }).ScheduleParallel();
         entityCommandBufferSystem.AddJobHandleForProducer(state.Dependency);
     }
+}
 }

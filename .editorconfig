@@ -9,7 +9,7 @@ dotnet_diagnostic.CS8019.severity = none
 generated_code = true
 dotnet_analyzer_diagnostic.severity = none
 # Prevent analyzers from running in these directories
-[Library/PackageCache/**]
+[**/Library/PackageCache/**]
 generated_code = true
 dotnet_analyzer_diagnostic.severity = none
 dotnet_diagnostic.CS8019.severity = none
