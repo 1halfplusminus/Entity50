@@ -16,7 +16,27 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: bf5f781f784d2485390cb8ee29df9fa3
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 68a3ebe560581ae4eaa22aa6e466c06a
+    m_Address: Assets/Main/Character/Cube.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71af7f9e258d6826fbd156138be46bac
+    m_Address: Assets/Main/Character/Dady/Dady 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 36cc5eacf52556d098a8c96aa502c0fc
+    m_Address: Assets/Assets Packs/Icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 040ae907ee8ae5df4987f3818bf2a415
+    m_Address: Assets/Assets Packs/mesh.mesh
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 503c581cbc30cbfa6bb4ab6d2db171d1
+    m_Address: Assets/world.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c594461a271ee3f1e8f285c7f52bb468, type: 2}
   m_SchemaSet:

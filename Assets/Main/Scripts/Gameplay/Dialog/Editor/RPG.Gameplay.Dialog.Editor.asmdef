@@ -1,0 +1,19 @@
+{
+    "name": "RPG.Gameplay.Dialog.Editor",
+    "rootNamespace": "",
+    "references": [
+        "RPG.Gameplay.Dialog",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

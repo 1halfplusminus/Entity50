@@ -1,0 +1,32 @@
+{
+    "name": "RPG.Gameplay.Inventory",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Entities",
+        "Unity.Mathematics",
+        "Unity.Physics",
+        "Unity.Collections",
+        "Unity.Entities.Hybrid",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.Scenes",
+        "Unity.Transforms",
+        "Unity.Burst",
+        "RPG.UI",
+        "RPG.Core",
+        "RPG.Control",
+        "RPG.Gameplay",
+        "RPG.Stats",
+        "RPG.Combat",
+        "RPG.Saving"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
