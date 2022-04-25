@@ -40,6 +40,8 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 8f381ca0816483a7d9e7b2902c46cb36, type: 2}
   - {fileID: 11400000, guid: 1db8284f1ce0f61ff9ea7fa851524b70, type: 2}
+  - {fileID: 11400000, guid: de7e2be200ada03479181a0a7bd992c5, type: 2}
+  - {fileID: 11400000, guid: 41be6ea14b2f2f930b82a8551be9c3c9, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -81,6 +83,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - InGameUI
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 3702bcd7a3e96b6f6bb469bbd72fa918, type: 2}

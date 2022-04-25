@@ -28,7 +28,7 @@ namespace RPG.UI
                }
                else
                {
-                   Debug.LogError("No root visual element");
+                //    Debug.LogError("No root visual element");
                }
            })
            .WithoutBurst().Run();

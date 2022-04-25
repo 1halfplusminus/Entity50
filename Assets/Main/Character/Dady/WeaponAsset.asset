@@ -22,5 +22,5 @@ MonoBehaviour:
   AttackDuration: 0
   SocketType: 0
   HitEvents: []
-  GUID: 
+  GUID: Assets/Main/Character/Dady/WeaponAsset.asset
   Clip: {fileID: 0}

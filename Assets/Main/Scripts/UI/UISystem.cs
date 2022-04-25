@@ -80,7 +80,7 @@ namespace RPG.UI
                     {
                         if (r.Result.Count > 0)
                         {
-                            handle = Addressables.LoadAssetAsync<GameObject>(r);
+                            handle = Addressables.LoadAssetAsync<GameObject>(GAME_OVER_UI_ADDRESS);
                             handle.Completed += HandleCompleted;
                         }
                     }

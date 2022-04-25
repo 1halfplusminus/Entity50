@@ -17,6 +17,7 @@ namespace RPG.Saving
         public BlobArray<byte> Data;
         public BlobArray<BlobString> GUIDS;
     }
+    [DisableAutoCreation]
     public struct TestSystem : ISystem
     {
         public bool Runned;

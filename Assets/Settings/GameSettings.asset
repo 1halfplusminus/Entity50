@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1987905243683618444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4befa1bbefbeeb69a80011967dfd7fbf, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  NewGameScene: 5a223832e8e2c83d4a578ed58c03f8ef
+  PlayerScene: 52511c4efbf1699ceb2637c33bd936cd
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c721d3a7779d5d37b22d53b73e5b168, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  NewGameScene: {fileID: 102900000, guid: 5a223832e8e2c83d4a578ed58c03f8ef, type: 3}
+  PlayerScene: {fileID: 102900000, guid: 52511c4efbf1699ceb2637c33bd936cd, type: 3}
