@@ -1,8 +1,0 @@
-ManifestFileVersion: 1
-CompatibilityAssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: world
-      Hash: 1011475301093bb7c04eb61662ff93f7
-      CRC: 3285897955
-      Dependencies: {}

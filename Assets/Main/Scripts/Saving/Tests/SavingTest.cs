@@ -9,73 +9,12 @@ using UnityEditor;
 using Unity.Entities.Serialization;
 using Unity.Scenes;
 using RPG.Saving;
-using Newtonsoft.Json;
-using UnityEngine.AddressableAssets;
-using Unity.Build.Classic;
-using UnityEditor.Build.Pipeline;
 using System.Runtime.InteropServices;
-using System.Text;
 using RPG.Core;
 
 namespace RPG.Test
 {
-    class TestBundlesBuildCustomizer : ClassicBuildPipelineCustomizer
-    {
-        public override Type[] UsedComponents => base.UsedComponents;
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override string[] ModifyEmbeddedScenes(string[] scenes)
-        {
-            return base.ModifyEmbeddedScenes(scenes);
-        }
-
-        public override void OnBeforeBuild()
-        {
-            base.OnBeforeBuild();
-            AssetBundleBuild[] buildMap = new AssetBundleBuild[1];
-            buildMap[0].assetBundleName = "world";
-            buildMap[0].assetNames = new string[]{
-                "Assets/world.asset"
-            };
-            CompatibilityBuildPipeline.BuildAssetBundles ("Assets/ABs", buildMap, BuildAssetBundleOptions.None, BuildTarget.StandaloneLinux64);
-        }
-
-        public override void OnBeforeRegisterAdditionalFilesToDeploy()
-        {
-            base.OnBeforeRegisterAdditionalFilesToDeploy();
-
-        }
-
-        public override BuildOptions ProvideBuildOptions()
-        {
-            return base.ProvideBuildOptions();
-        }
-
-        public override string[] ProvidePlayerScriptingDefines()
-        {
-            return base.ProvidePlayerScriptingDefines();
-        }
-
-        public override void RegisterAdditionalFilesToDeploy(Action<string, string> registerAdditionalFileToDeploy)
-        {
-           
-            base.RegisterAdditionalFilesToDeploy(registerAdditionalFileToDeploy);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-    }
     struct ChunkComponents
     {
         public ulong Type;
@@ -256,9 +195,18 @@ namespace RPG.Test
             // AssetDatabase.CreateAsset(textAsset,path);
             // AssetDatabase.Refresh();
             // var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
-            AssetDatabase.AddObjectToAsset(objRefs,asset);
+            var objRefSaved = AssetDatabase.LoadAssetAtPath<ReferencedUnityObjects>("Assets/"+path);
+            if(objRefSaved != null){
+                objRefSaved.Array = objRefs.Array;
+                objRefSaved.CompanionObjectIndices = objRefs.CompanionObjectIndices;
+                EditorUtility.SetDirty(objRefSaved);
+            } else {
+                objRefSaved = objRefs;
+                AssetDatabase.AddObjectToAsset(objRefSaved,asset);
+               objRefSaved.name = "Raw";
+            }
             AssetDatabase.SaveAssetIfDirty(asset);
-            RPG.Core.AddressableExtensions.SetAddressableGroup(path,"Default Local Group");
+            AddressableExtensions.SetAddressableGroup(path,"Default Local Group");
             blobBuilder.Dispose();
         }
         [Test]
